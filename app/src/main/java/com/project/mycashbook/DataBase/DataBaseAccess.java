@@ -33,22 +33,6 @@ public class DataBaseAccess {
         }
     }
 
-    public Integer Delete(String table, String where, String value){
-        return db.delete(table, where, new String[]{value});
-    }
-
-    public Cursor DeleteAll(String table){
-        return db.rawQuery("DELETE FROM " + table, null);
-    }
-
-    public boolean DeleteWhere(String table, String where){
-        return db.delete(table, where, null) > 0;
-    }
-
-    public Cursor DistinctWhere(String table, String where){
-        return db.rawQuery("SELECT DISTINCT orderedDate FROM " + table + " WHERE " + where, null);
-    }
-
     public Cursor Get(String table){
         return db.rawQuery("SELECT * FROM " + table, null);
     }
